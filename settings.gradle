@@ -1,2 +1,5 @@
+include ':entity'
+include ':usecases'
+include ':repository'
 include ':app'
 rootProject.name = "LimaPassApp"

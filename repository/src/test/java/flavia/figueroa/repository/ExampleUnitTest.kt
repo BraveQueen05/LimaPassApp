@@ -1,4 +1,4 @@
-package flavia.figueroa.limapassapp
+package flavia.figueroa.repository
 
 import org.junit.Test
 

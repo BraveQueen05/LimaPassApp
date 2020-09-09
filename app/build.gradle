@@ -1,37 +1,68 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+
+def CONFIG = { k -> "\"${project.properties.get(k)}\"" }
+def BASE_URL = "BASE_URL"
 
 android {
-    compileSdkVersion 30
-    buildToolsVersion "30.0.2"
+    compileSdkVersion androidConfig.androidCompileSdkVersion
+    buildToolsVersion androidConfig.androidBuildToolsVersion
 
     defaultConfig {
-        applicationId "flavia.figueroa.limapassapp"
-        minSdkVersion 21
-        targetSdkVersion 30
-        versionCode 1
-        versionName "1.0"
+        applicationId androidConfig.androidapplicationId
+        minSdkVersion androidConfig.androidMinSdkVersion
+        targetSdkVersion androidConfig.androidTargetSdkVersion
+        versionCode androidConfig.androidVersionCode
+        versionName androidConfig.androidVersionName
 
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner androidConfig.androidTestInstrumentationRunner
+        vectorDrawables.useSupportLibrary = true
+    }
+
+    signingConfigs {
+        release {
+            storeFile file('../.buildSystem/lima-pass-key.p12')
+            keyAlias 'lima-pass-key'
+            keyPassword 'l1m4p455'
+            storePassword 'l1m4p455'
+        }
     }
 
     buildTypes {
         release {
+            buildConfigField "String", BASE_URL, CONFIG("base.url")
             minifyEnabled false
+            debuggable false
+            signingConfig signingConfigs.release
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
+        debug {
+            applicationIdSuffix ".qa"
+            buildConfigField "String", BASE_URL, CONFIG("base.url.qa")
+        }
+    }
+    dataBinding {
+        enabled = true
+    }
+    compileOptions {
+        sourceCompatibility = '1.8'
+        targetCompatibility = '1.8'
     }
 }
 
 dependencies {
     implementation fileTree(dir: "libs", include: ["*.jar"])
-    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
-    implementation 'androidx.core:core-ktx:1.3.1'
-    implementation 'androidx.appcompat:appcompat:1.2.0'
-    implementation 'androidx.constraintlayout:constraintlayout:2.0.1'
-    testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+    implementation presentationDependencies.kotlin
+    implementation presentationDependencies.koin
+    implementation presentationDependencies.core
+    implementation presentationDependencies.appcompat
 
+    implementation presentationDependencies.design
+
+    implementation presentationDependencies.glide
+    implementation presentationDependencies.glideAnnotations
+
+    implementation presentationDependencies.gson
 }
