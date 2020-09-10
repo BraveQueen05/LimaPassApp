@@ -61,7 +61,7 @@ ext {
     //Android
     androidConfig = [
             androidBuildToolsVersion        : "30.0.2",
-            androidMinSdkVersion            : 21,
+            androidMinSdkVersion            : 23,
             androidTargetSdkVersion         : 30,
             androidCompileSdkVersion        : 30,
             androidapplicationId            : 'flavia.figueroa.limapassapp',

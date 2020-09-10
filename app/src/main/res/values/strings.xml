@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">LimaPassApp</string>
+
+    <string name="hint_login_email">Correo electrónico</string>
+    <string name="hint_login_password">Contraseña</string>
+    <string name="text_btn_sign_up">¿No tienes cuenta? <u>Regístrate</u></string>
+    <string name="text_btn_login">Ingresar</string>
+
 </resources>

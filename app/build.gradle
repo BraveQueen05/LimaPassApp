@@ -43,8 +43,8 @@ android {
             buildConfigField "String", BASE_URL, CONFIG("base.url.qa")
         }
     }
-    dataBinding {
-        enabled = true
+    buildFeatures {
+        dataBinding = true
     }
     compileOptions {
         sourceCompatibility = '1.8'
@@ -58,6 +58,8 @@ dependencies {
     implementation presentationDependencies.koin
     implementation presentationDependencies.core
     implementation presentationDependencies.appcompat
+    implementation presentationDependencies.coroutines
+    implementation presentationDependencies.coroutinesAndroid
 
     implementation presentationDependencies.design
 
@@ -65,4 +67,8 @@ dependencies {
     implementation presentationDependencies.glideAnnotations
 
     implementation presentationDependencies.gson
+
+    implementation project(path: ':usecases')
+    implementation project(path: ':repository')
+    implementation project(path: ':entity')
 }
