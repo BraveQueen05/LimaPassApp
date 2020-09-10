@@ -37,8 +37,8 @@ class LoginActivity: BaseActivity() {
     }
 
     private fun enterFormAnimation(){
-        val anim = AnimationUtils.loadAnimation(this,  R.anim.fade_anim)
-        anim.duration = 850
+        val anim = AnimationUtils.loadAnimation(this,  R.anim.fade_translate_anim)
+        anim.duration = 360
         this.ctrLyForm?.startAnimation(anim)
     }
 
