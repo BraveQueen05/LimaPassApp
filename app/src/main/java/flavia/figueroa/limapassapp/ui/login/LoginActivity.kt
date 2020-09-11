@@ -1,6 +1,6 @@
 package flavia.figueroa.limapassapp.ui.login
 
-import android.view.animation.AnimationUtils
+import android.view.animation.*
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.databinding.DataBindingUtil
 import flavia.figueroa.limapassapp.R
@@ -28,6 +28,8 @@ class LoginActivity: BaseActivity() {
         val binding: ActivityLoginBinding = DataBindingUtil.setContentView(this, getLayout())
         binding.lifecycleOwner = this
 
+        window.sharedElementEnterTransition.setDuration(500).interpolator = OvershootInterpolator(1.0f)
+
         findViewsByIds()
         enterFormAnimation()
     }
@@ -38,7 +40,9 @@ class LoginActivity: BaseActivity() {
 
     private fun enterFormAnimation(){
         val anim = AnimationUtils.loadAnimation(this,  R.anim.fade_translate_anim)
-        anim.duration = 360
+        //anim.startOffset = 185
+        anim.duration = 500
+        anim.interpolator = OvershootInterpolator(1.0f)
         this.ctrLyForm?.startAnimation(anim)
     }
 

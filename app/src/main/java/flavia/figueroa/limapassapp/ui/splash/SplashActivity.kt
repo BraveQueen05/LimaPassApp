@@ -52,15 +52,15 @@ class SplashActivity : BaseActivity() {
     }
 
     private fun imgSplashAnimation(){
-        val anim = AnimationUtils.loadAnimation(this, R.anim.scale_anim)
+        val anim = AnimationUtils.loadAnimation(this, R.anim.fade_scale_anim)
         anim.interpolator = FastOutSlowInInterpolator()
-        anim.duration = 1100
+        anim.duration = 600
         this.imgSplash?.startAnimation(anim)
     }
 
     private fun imgMuniAnimation(){
         val anim = AnimationUtils.loadAnimation(this, R.anim.fade_anim)
-        anim.startOffset = 800
+        anim.startOffset = 300
         anim.duration = 500
         anim.interpolator = AccelerateInterpolator()
         anim.fillAfter = true
