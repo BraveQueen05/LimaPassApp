@@ -1,60 +1,32 @@
 package flavia.figueroa.limapassapp.ui.host.buses
 
-import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.databinding.DataBindingUtil
 import flavia.figueroa.limapassapp.R
+import flavia.figueroa.limapassapp.databinding.FragmentBusesBinding
+import flavia.figueroa.limapassapp.ui.BaseFragment
+import flavia.figueroa.limapassapp.ui.BaseViewModel
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
+class BusesFragment : BaseFragment() {
+    override fun getLayout(): Int = R.layout.fragment_buses
 
-/**
- * A simple [Fragment] subclass.
- * Use the [BusesFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
-class BusesFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
+    override fun getViewModel(): BaseViewModel? = null
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
+    override fun bindFragment(inflater: LayoutInflater, container: ViewGroup?, layout: Int): View? {
+        val binding: FragmentBusesBinding = DataBindingUtil.inflate(inflater, getLayout(), container, false)
+        binding.lifecycleOwner = this
+
+        return binding.root
     }
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_buses, container, false)
+    override fun setUpArguments() {
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment BusesFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            BusesFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
+    override fun setUpView() {
+    }
+
+    override fun observeViewModel() {
     }
 }
