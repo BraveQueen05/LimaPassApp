@@ -20,6 +20,9 @@
             </intent-filter>
         </activity>
         <activity android:name=".ui.login.LoginActivity"/>
+        <activity android:name=".ui.signup.SignUpActivity"/>
+        <activity android:name=".ui.recovery.RecoveryPassActivity"/>
+        <activity android:name=".ui.host.HostActivity"/>
     </application>
 
 </manifest>

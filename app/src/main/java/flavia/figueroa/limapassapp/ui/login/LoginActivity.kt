@@ -1,12 +1,18 @@
 package flavia.figueroa.limapassapp.ui.login
 
+import android.content.Intent
 import android.view.animation.*
+import androidx.appcompat.widget.AppCompatButton
+import androidx.appcompat.widget.AppCompatTextView
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.databinding.DataBindingUtil
 import flavia.figueroa.limapassapp.R
 import flavia.figueroa.limapassapp.databinding.ActivityLoginBinding
 import flavia.figueroa.limapassapp.ui.BaseActivity
 import flavia.figueroa.limapassapp.ui.BaseViewModel
+import flavia.figueroa.limapassapp.ui.host.HostActivity
+import flavia.figueroa.limapassapp.ui.recovery.RecoveryPassActivity
+import flavia.figueroa.limapassapp.ui.signup.SignUpActivity
 
 /*
     Created by: Flavia Figueroa
@@ -18,7 +24,10 @@ import flavia.figueroa.limapassapp.ui.BaseViewModel
 
 class LoginActivity: BaseActivity() {
 
-    var ctrLyForm: ConstraintLayout ?= null
+    private var ctrLyForm       : ConstraintLayout  ?= null
+    private var tvSignUp        : AppCompatTextView ?= null
+    private var tvRecoveryPass  : AppCompatTextView ?= null
+    private var btnLogin        : AppCompatButton   ?= null
 
     override fun getLayout(): Int = R.layout.activity_login
 
@@ -32,20 +41,37 @@ class LoginActivity: BaseActivity() {
 
         findViewsByIds()
         enterFormAnimation()
+        onClickEvents()
     }
 
     private fun findViewsByIds(){
-        this.ctrLyForm = findViewById(R.id.ctrLyForm)
+        this.ctrLyForm      = findViewById(R.id.ctrLyForm)
+        this.tvSignUp       = findViewById(R.id.tvSignUp)
+        this.tvRecoveryPass = findViewById(R.id.tvRecoveryPass)
+        this.btnLogin       = findViewById(R.id.btnLogin)
     }
 
     private fun enterFormAnimation(){
         val anim = AnimationUtils.loadAnimation(this,  R.anim.fade_translate_anim)
-        //anim.startOffset = 185
         anim.duration = 500
         anim.interpolator = OvershootInterpolator(1.0f)
         this.ctrLyForm?.startAnimation(anim)
     }
 
     override fun observeViewModel() {
+    }
+
+    private fun onClickEvents(){
+        this.btnLogin?.setOnClickListener {
+            startActivity(Intent(this, HostActivity::class.java))
+        }
+
+        this.tvSignUp?.setOnClickListener {
+            startActivity(Intent(this, SignUpActivity::class.java))
+        }
+
+        this.tvRecoveryPass?.setOnClickListener {
+            startActivity(Intent(this, RecoveryPassActivity::class.java))
+        }
     }
 }

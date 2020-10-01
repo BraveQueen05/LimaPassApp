@@ -3,7 +3,24 @@
 
     <string name="hint_login_email">Correo electrónico</string>
     <string name="hint_login_password">Contraseña</string>
-    <string name="text_btn_sign_up">¿No tienes cuenta? <u>Regístrate</u></string>
+    <string name="text_btn_go_signup">¿No tienes cuenta? <u>Regístrate</u></string>
+    <string name="text_gforgot_password">Olvidé mi contraseña</string>
     <string name="text_btn_login">Ingresar</string>
 
+    <string name="text_title_signup">¡Crea tu cuenta!</string>
+    <string name="hint_signup_dni">Ingresa tu DNI</string>
+    <string name="hint_signup_email">Ingresa tu correo</string>
+    <string name="hint_signup_password">Ingresa tu contraseña</string>
+    <string name="hint_signup_password_confirm">Confirma tu contraseña</string>
+    <string name="text_btn_signup">Registrarme</string>
+
+    <string name="text_title_recovery_pass">¿Olvidaste tu contraseña?</string>
+    <string name="text_description_recovery_pass">¡No te preocupes! Ingresa tu correo electrónico registrado para enviarte tu contraseña</string>
+    <string name="hint_email_recovery_pass">Correo electrónico</string>
+
+    <string name="my_card">Mi tarjeta</string>
+    <string name="buses">Buses</string>
+    <string name="rates">Tarifas</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

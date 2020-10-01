@@ -5,10 +5,32 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
-        <item name="android:statusBarColor">@color/colorPrimary</item>
-        <item name="android:navigationBarColor">@color/colorPrimary</item>
         <item name="android:windowExitTransition">@android:transition/no_transition</item>
         <item name="android:windowEnterTransition">@android:transition/no_transition</item>
+    </style>
+
+    <style name="TextInputGrayLight" parent="Widget.Design.TextInputLayout">
+        <item name="background">@drawable/bg_all_corners_gray_light</item>
+    </style>
+
+    <style name="TextInputEditTextGrayLight" parent="Widget.AppCompat.EditText">
+        <item name="background">@drawable/bg_all_corners_gray_light</item>
+    </style>
+
+    <style name="TextGBook14PrimaryDark" parent="Widget.AppCompat.TextView">
+        <item name="android:fontFamily">@font/gbook</item>
+        <item name="android:textColor">@color/colorPrimaryDark</item>
+    </style>
+
+    <style name="TextGLight14PrimaryDark" parent="Widget.AppCompat.TextView">
+        <item name="android:fontFamily">@font/glight</item>
+        <item name="android:textColor">@color/colorPrimaryDark</item>
+    </style>
+
+    <style name="TextGBoldPrimaryDark" parent="Widget.AppCompat.TextView">
+        <item name="android:fontFamily">@font/gbold</item>
+        <item name="android:textColor">@color/colorPrimaryDark</item>
+        <item name="android:textSize">@dimen/text_dimen_25</item>
     </style>
 
 </resources>

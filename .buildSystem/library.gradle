@@ -27,6 +27,7 @@ ext {
     mokitoVersion = '3.1.0'
     scannerVersion = '1.9.13'
     jsoupVersion = '1.11.3'
+    nav_version = "2.3.0"
 
     firebaseVersion = '17.2.0'
     crashlyticsVersion = '2.10.1'
@@ -57,6 +58,7 @@ ext {
     googlePlacesPackage = 'com.google.android.libraries.places'
     barcodeScannerPackage = 'me.dm7.barcodescanner'
     jsoupPackage = "org.jsoup"
+    navigationPackage = "androidx.navigation"
 
     //Android
     androidConfig = [
@@ -100,6 +102,8 @@ ext {
             crashlytics        : buildDependency(crashlyticsPackage, 'crashlytics', crashlyticsVersion),
             googlePlacesPackage: buildDependency(googlePlacesPackage, 'places', googlePlacesVersion),
             scanner            : buildDependency(barcodeScannerPackage, 'zxing', scannerVersion),
+            navigationFragment : buildDependency(navigationPackage, 'navigation-fragment-ktx', nav_version),
+            navigationUI       : buildDependency(navigationPackage, 'navigation-ui-ktx', nav_version)
     ]
 
     repositoryDependencies = [

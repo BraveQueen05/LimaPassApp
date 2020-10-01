@@ -8,6 +8,7 @@ import android.view.View
 import android.util.Pair as UtilPair
 import android.view.animation.*
 import androidx.appcompat.widget.AppCompatImageView
+import androidx.core.content.ContextCompat
 import androidx.databinding.DataBindingUtil
 import androidx.interpolator.view.animation.FastOutSlowInInterpolator
 import flavia.figueroa.limapassapp.R
@@ -37,10 +38,16 @@ class SplashActivity : BaseActivity() {
         val binding: ActivitySplashBinding = DataBindingUtil.setContentView(this, getLayout())
         binding.lifecycleOwner = this
 
+        setBarsBackgrounds()
         findViewsByIds()
         imgSplashAnimation()
         imgMuniAnimation()
         goToLogin()
+    }
+
+    private fun setBarsBackgrounds(){
+        window.statusBarColor = ContextCompat.getColor(this, R.color.white)
+        window.navigationBarColor = ContextCompat.getColor(this, R.color.white)
     }
 
     override fun observeViewModel() {

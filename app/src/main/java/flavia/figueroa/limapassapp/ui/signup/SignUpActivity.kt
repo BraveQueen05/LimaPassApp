@@ -1,6 +1,8 @@
 package flavia.figueroa.limapassapp.ui.signup
 
+import androidx.databinding.DataBindingUtil
 import flavia.figueroa.limapassapp.R
+import flavia.figueroa.limapassapp.databinding.ActivitySignupBinding
 import flavia.figueroa.limapassapp.ui.BaseActivity
 import flavia.figueroa.limapassapp.ui.BaseViewModel
 
@@ -19,7 +21,8 @@ class SignUpActivity: BaseActivity() {
     override fun getViewModel(): BaseViewModel? = null
 
     override fun setUpView() {
-
+        val binding: ActivitySignupBinding = DataBindingUtil.setContentView(this, getLayout())
+        binding.lifecycleOwner = this
     }
 
     override fun observeViewModel() {

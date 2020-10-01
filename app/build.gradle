@@ -60,6 +60,8 @@ dependencies {
     implementation presentationDependencies.appcompat
     implementation presentationDependencies.coroutines
     implementation presentationDependencies.coroutinesAndroid
+    implementation presentationDependencies.navigationFragment
+    implementation presentationDependencies.navigationUI
 
     implementation presentationDependencies.design
 
@@ -71,4 +73,5 @@ dependencies {
     implementation project(path: ':usecases')
     implementation project(path: ':repository')
     implementation project(path: ':entity')
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
 }
