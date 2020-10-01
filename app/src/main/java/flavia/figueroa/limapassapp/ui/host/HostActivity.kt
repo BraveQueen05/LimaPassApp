@@ -2,6 +2,7 @@ package flavia.figueroa.limapassapp.ui.host
 
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
+import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.NavigationUI
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import flavia.figueroa.limapassapp.R
@@ -22,8 +23,13 @@ class HostActivity: BaseActivity() {
     override fun getViewModel(): BaseViewModel? = null
 
     override fun setUpView() {
+        initNavigationComponent()
+    }
+
+    private fun initNavigationComponent(){
         val bottomNavigationView: BottomNavigationView = findViewById(R.id.bottomNavigationView)
-        val navController: NavController = Navigation.findNavController(this, R.id.nav_host_fragment)
+        val navHostFragment = supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
+        val navController = navHostFragment.navController
         NavigationUI.setupWithNavController(bottomNavigationView, navController)
     }
 

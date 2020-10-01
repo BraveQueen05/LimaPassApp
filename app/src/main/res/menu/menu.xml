@@ -10,7 +10,7 @@
         android:icon="@drawable/ic_bus"
         android:title="@string/buses" />
     <item
-        android:id="@+id/rateFragment"
+        android:id="@+id/pricesFragment"
         android:icon="@drawable/ic_rates"
-        android:title="@string/rates" />
+        android:title="@string/prices" />
 </menu>

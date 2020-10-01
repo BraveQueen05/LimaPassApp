@@ -1,4 +1,4 @@
-package flavia.figueroa.limapassapp.qa
+package flavia.figueroa.limapassapp.ui.host.prices
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -14,10 +14,10 @@ private const val ARG_PARAM2 = "param2"
 
 /**
  * A simple [Fragment] subclass.
- * Use the [RateFragment.newInstance] factory method to
+ * Use the [PricesFragment.newInstance] factory method to
  * create an instance of this fragment.
  */
-class RateFragment : Fragment() {
+class PricesFragment : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
@@ -35,7 +35,7 @@ class RateFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_rate, container, false)
+        return inflater.inflate(R.layout.fragment_prices, container, false)
     }
 
     companion object {
@@ -50,7 +50,7 @@ class RateFragment : Fragment() {
         // TODO: Rename and change types and number of parameters
         @JvmStatic
         fun newInstance(param1: String, param2: String) =
-            RateFragment().apply {
+            PricesFragment().apply {
                 arguments = Bundle().apply {
                     putString(ARG_PARAM1, param1)
                     putString(ARG_PARAM2, param2)

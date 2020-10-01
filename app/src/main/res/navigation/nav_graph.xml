@@ -7,17 +7,17 @@
 
     <fragment
         android:id="@+id/myCardFragment"
-        android:name="flavia.figueroa.limapassapp.qa.MyCardFragment"
+        android:name="flavia.figueroa.limapassapp.ui.host.mycard.MyCardFragment"
         android:label="fragment_my_card"
         tools:layout="@layout/fragment_my_card" />
     <fragment
         android:id="@+id/busesFragment"
-        android:name="flavia.figueroa.limapassapp.qa.BusesFragment"
+        android:name="flavia.figueroa.limapassapp.ui.host.buses.BusesFragment"
         android:label="fragment_buses"
         tools:layout="@layout/fragment_buses" />
     <fragment
-        android:id="@+id/rateFragment"
-        android:name="flavia.figueroa.limapassapp.qa.RateFragment"
+        android:id="@+id/pricesFragment"
+        android:name="flavia.figueroa.limapassapp.ui.host.prices.PricesFragment"
         android:label="fragment_rate"
-        tools:layout="@layout/fragment_rate" />
+        tools:layout="@layout/fragment_prices" />
 </navigation>
