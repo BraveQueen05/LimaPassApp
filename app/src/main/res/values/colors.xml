@@ -7,4 +7,10 @@
     <color name="white">#FFFFFF</color>
     <color name="gray_light">#F4F4F4</color>
     <color name="blue_light">#5392CD</color>
+
+    <color name="red_card">#e6332e</color>
+    <color name="dark_red">#DA5C59</color>
+    <color name="blue_card">#0136aa</color>
+    <color name="gray_card">#bcc7e3</color>
+    <color name="yellow_card">#e4a420</color>
 </resources>

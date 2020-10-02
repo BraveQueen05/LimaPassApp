@@ -11,7 +11,7 @@ import flavia.figueroa.limapassapp.databinding.ActivityLoginBinding
 import flavia.figueroa.limapassapp.ui.BaseActivity
 import flavia.figueroa.limapassapp.ui.BaseViewModel
 import flavia.figueroa.limapassapp.ui.host.HostActivity
-import flavia.figueroa.limapassapp.ui.recovery.RecoveryPassActivity
+import flavia.figueroa.limapassapp.ui.recovery.ForgotPasswordDialogFragment
 import flavia.figueroa.limapassapp.ui.signup.SignUpActivity
 
 /*
@@ -64,6 +64,7 @@ class LoginActivity: BaseActivity() {
     private fun onClickEvents(){
         this.btnLogin?.setOnClickListener {
             startActivity(Intent(this, HostActivity::class.java))
+            this.finish()
         }
 
         this.tvSignUp?.setOnClickListener {
@@ -71,7 +72,7 @@ class LoginActivity: BaseActivity() {
         }
 
         this.tvRecoveryPass?.setOnClickListener {
-            startActivity(Intent(this, RecoveryPassActivity::class.java))
+            ForgotPasswordDialogFragment().show(supportFragmentManager, ForgotPasswordDialogFragment().toString())
         }
     }
 }

@@ -38,7 +38,7 @@
 
                 <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/textView2"
-                    style="@style/TextGBoldPrimaryDark"
+                    style="@style/TextGBold25PrimaryDark"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="32dp"

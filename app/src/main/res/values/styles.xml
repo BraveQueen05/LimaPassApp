@@ -9,6 +9,12 @@
         <item name="android:windowEnterTransition">@android:transition/no_transition</item>
     </style>
 
+    <style name="DialogFragmentWidth" parent="android:Theme.Material.Light.Dialog">
+        <item name="android:windowMinWidthMinor">90%</item>
+        <item name="android:windowMinWidthMajor">90%</item>
+
+    </style>
+
     <style name="TextInputGrayLight" parent="Widget.Design.TextInputLayout">
         <item name="background">@drawable/bg_all_corners_gray_light</item>
     </style>
@@ -27,9 +33,27 @@
         <item name="android:textColor">@color/colorPrimaryDark</item>
     </style>
 
-    <style name="TextGBoldPrimaryDark" parent="Widget.AppCompat.TextView">
+    <style name="TextGBold25PrimaryDark" parent="Widget.AppCompat.TextView">
         <item name="android:fontFamily">@font/gbold</item>
         <item name="android:textColor">@color/colorPrimaryDark</item>
+        <item name="android:textSize">@dimen/text_dimen_25</item>
+    </style>
+
+    <style name="TextGBold21PrimaryDark" parent="Widget.AppCompat.TextView">
+        <item name="android:fontFamily">@font/gbold</item>
+        <item name="android:textColor">@color/colorPrimaryDark</item>
+        <item name="android:textSize">@dimen/text_dimen_21</item>
+    </style>
+
+    <style name="TextGMedium16PrimaryDark" parent="Widget.AppCompat.TextView">
+        <item name="android:fontFamily">@font/gmedium</item>
+        <item name="android:textColor">@color/colorPrimaryDark</item>
+        <item name="android:textSize">@dimen/text_dimen_21</item>
+    </style>
+
+    <style name="TextGBold25White" parent="Widget.AppCompat.TextView">
+        <item name="android:fontFamily">@font/gbold</item>
+        <item name="android:textColor">@color/white</item>
         <item name="android:textSize">@dimen/text_dimen_25</item>
     </style>
 
