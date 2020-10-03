@@ -1,5 +1,7 @@
 package flavia.figueroa.limapassapp.ui.host
 
+import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import androidx.navigation.fragment.NavHostFragment
@@ -24,6 +26,15 @@ class HostActivity: BaseActivity() {
 
     override fun setUpView() {
         initNavigationComponent()
+
+        val builder = AlertDialog.Builder(this)
+        builder.setMessage("¡Bienvenido!")
+
+        builder.setPositiveButton("Listo") { dialog, which ->
+            dialog.dismiss()
+        }
+
+        builder.show()
     }
 
     private fun initNavigationComponent(){

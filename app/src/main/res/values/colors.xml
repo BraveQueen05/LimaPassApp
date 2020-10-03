@@ -13,4 +13,6 @@
     <color name="blue_card">#0136aa</color>
     <color name="gray_card">#bcc7e3</color>
     <color name="yellow_card">#e4a420</color>
+
+    <color name="yellow_prices">#E1AA3D</color>
 </resources>
