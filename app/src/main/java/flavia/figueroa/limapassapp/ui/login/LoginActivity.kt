@@ -1,18 +1,24 @@
 package flavia.figueroa.limapassapp.ui.login
 
 import android.content.Intent
+import android.view.View
 import android.view.animation.*
+import android.widget.AdapterView
+import android.widget.ArrayAdapter
+import android.widget.Spinner
 import androidx.appcompat.widget.AppCompatButton
 import androidx.appcompat.widget.AppCompatTextView
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.databinding.DataBindingUtil
 import flavia.figueroa.limapassapp.R
 import flavia.figueroa.limapassapp.databinding.ActivityLoginBinding
+import flavia.figueroa.limapassapp.extensions.changeLenguageTo
 import flavia.figueroa.limapassapp.ui.BaseActivity
 import flavia.figueroa.limapassapp.ui.BaseViewModel
 import flavia.figueroa.limapassapp.ui.host.HostActivity
 import flavia.figueroa.limapassapp.ui.recovery.ForgotPasswordDialogFragment
 import flavia.figueroa.limapassapp.ui.signup.SignUpActivity
+import kotlinx.android.synthetic.main.activity_login.*
 
 /*
     Created by: Flavia Figueroa
@@ -73,6 +79,12 @@ class LoginActivity: BaseActivity() {
 
         this.tvRecoveryPass?.setOnClickListener {
             ForgotPasswordDialogFragment().show(supportFragmentManager, ForgotPasswordDialogFragment().toString())
+        }
+        this.btnEn.setOnClickListener {
+            changeLenguageTo("en")
+        }
+        this.btnEs.setOnClickListener {
+            changeLenguageTo()
         }
     }
 }

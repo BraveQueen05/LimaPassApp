@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">LimaPassApp</string>
+    <string name="hint_login_email">Email</string>
+    <string name="hint_login_password">Password</string>
+    <string name="text_btn_go_signup">Don\'t you have an account? <u>SignUp!</u></string>
+    <string name="text_gforgot_password">Forgot my password</string>
+    <string name="text_btn_login">Ready!</string>
+    <string name="text_title_signup">Create an account</string>
+    <string name="hint_signup_dni">Enter your ID</string>
+    <string name="hint_signup_email">Enter your email</string>
+    <string name="hint_signup_password">Enter your password</string>
+    <string name="hint_signup_password_confirm">Confirm your password</string>
+    <string name="text_btn_signup">SignUp</string>
+    <string name="text_title_recovery_pass">I forgot my password</string>
+    <string name="text_description_recovery_pass">Don\'t worry! Enter your registered email and receive a your password</string>
+    <string name="hint_email_recovery_pass">Email</string>
+    <string name="my_card">My Card</string>
+    <string name="buses">Buses</string>
+    <string name="prices">Prices</string>
+    <string name="recharge">Recharge your card here</string>
+    <string name="my_information">My information</string>
+    <string name="name">Name</string>
+    <string name="lastnames">Lastname</string>
+    <string name="usefull_line">Usefull line</string>
+    <string name="welcome">Welcome!</string>
+    <string name="done">Done</string>
+    <string name="recharge_title">Recharge</string>
+</resources>

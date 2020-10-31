@@ -22,4 +22,13 @@
     <string name="buses">Buses</string>
     <string name="prices">Tarifas</string>
     <string name="recharge">Recarga tu tarjeta aquí</string>
+
+    <string name="my_information">Mi información</string>
+    <string name="name">Nombres</string>
+    <string name="lastnames">Apellidos</string>
+    <string name="usefull_line">Línea más utilizada</string>
+
+    <string name="welcome">¡Bienvenido!</string>
+    <string name="done">Listo</string>
+    <string name="recharge_title">Recargar</string>
 </resources>

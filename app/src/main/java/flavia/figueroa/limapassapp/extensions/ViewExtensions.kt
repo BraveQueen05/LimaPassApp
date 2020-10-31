@@ -2,10 +2,12 @@ package flavia.figueroa.limapassapp.extensions
 
 import android.app.Activity
 import android.app.Dialog
+import android.content.res.Configuration
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.view.Window
 import flavia.figueroa.repository.network.exception.GenericException
+import java.util.*
 
 fun Exception.getExceptionMessage(): String {
     return when(this) {
@@ -26,4 +28,20 @@ fun Activity?.showDialog(resourceId: Int, func: Dialog.() -> Unit) {
     dialog.setContentView(resourceId)
     dialog.func()
     dialog.show()
+}
+
+fun Activity.changeLenguageTo(lenguage: String = "es") {
+    val locale = Locale(lenguage)
+    val config =
+        Configuration(resources.configuration)
+    Locale.setDefault(locale)
+    config.setLocale(locale)
+
+    //TODO: Update deprecated function
+    resources.updateConfiguration(
+        config,
+        this.resources.displayMetrics
+    )
+
+    recreate()
 }

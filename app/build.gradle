@@ -40,6 +40,9 @@ android {
         }
         debug {
             applicationIdSuffix ".qa"
+            debuggable true
+            minifyEnabled false
+            shrinkResources false
             buildConfigField "String", BASE_URL, CONFIG("base.url.qa")
         }
     }

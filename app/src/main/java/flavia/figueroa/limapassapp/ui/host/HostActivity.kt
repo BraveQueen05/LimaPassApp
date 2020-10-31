@@ -28,9 +28,9 @@ class HostActivity: BaseActivity() {
         initNavigationComponent()
 
         val builder = AlertDialog.Builder(this)
-        builder.setMessage("¡Bienvenido!")
+        builder.setMessage(getString(R.string.welcome))
 
-        builder.setPositiveButton("Listo") { dialog, which ->
+        builder.setPositiveButton(getString(R.string.done)) { dialog, which ->
             dialog.dismiss()
         }
 
