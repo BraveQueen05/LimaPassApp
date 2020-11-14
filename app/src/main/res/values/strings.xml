@@ -31,4 +31,15 @@
     <string name="welcome">¡Bienvenido!</string>
     <string name="done">Listo</string>
     <string name="recharge_title">Recargar</string>
+    
+    <string name="title_payment">Procesos de\nmedios de pago</string>
+    <string name="ref_payment">Ref. 188543558346</string>
+    <string name="card_number_hint">Número de tarjeta</string>
+    <string name="card_due_date_hint">mm/aa</string>
+    <string name="card_cvv_hint">CVC</string>
+    <string name="card_name_hint">Nombre</string>
+    <string name="card_lastname_hint">Apellido</string>
+    <string name="card_email_hint">Correo</string>
+    <string name="card_num_doc_hint">Nro Doc</string>
+    <string name="card_done_hint">PROCESAR TRANSACCIÓN</string>
 </resources>

@@ -37,7 +37,7 @@ class RechargeDialogFragment(private val listener: IRecharge): DialogFragment() 
 
         this.btnRechargeDone.setOnClickListener {
             if (!this.edtAmount.text.toString().isEmpty()) {
-                this.listener.recharge(edtAmount.text.toString().toInt())
+                this.listener.passToPayment(edtAmount.text.toString().toDouble())
                 dismiss()
             }else{
                 this.dismiss()
@@ -47,5 +47,5 @@ class RechargeDialogFragment(private val listener: IRecharge): DialogFragment() 
 }
 
 interface IRecharge{
-    fun recharge(amount: Int)
+    fun passToPayment(amount: Double)
 }

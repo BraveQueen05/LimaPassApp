@@ -4,6 +4,7 @@ import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.os.bundleOf
 import androidx.databinding.DataBindingUtil
 import flavia.figueroa.limapassapp.R
 import flavia.figueroa.limapassapp.databinding.FragmentMyCardBinding
@@ -12,7 +13,7 @@ import flavia.figueroa.limapassapp.ui.BaseViewModel
 import flavia.figueroa.limapassapp.ui.login.LoginActivity
 import kotlinx.android.synthetic.main.fragment_my_card.*
 
-class MyCardFragment : BaseFragment(), IRecharge {
+class MyCardFragment : BaseFragment(), IRecharge, IPayment {
     override fun getLayout(): Int = R.layout.fragment_my_card
 
     override fun getViewModel(): BaseViewModel? = null
@@ -40,7 +41,14 @@ class MyCardFragment : BaseFragment(), IRecharge {
     override fun observeViewModel() {
     }
 
-    override fun recharge(amount: Int) {
-        this.amount.text = "S/ "+ amount
+    override fun passToPayment(amount: Double) {
+        val df = PaymentDialogFragment(this)
+        val bundle = bundleOf("AMOUNT" to amount)
+        df.arguments = bundle
+        df.show(childFragmentManager, PaymentDialogFragment::class.toString())
+    }
+
+    override fun success(amount: Double) {
+        this.amount.text = "S/ $amount"
     }
 }
