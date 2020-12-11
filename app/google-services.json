@@ -1,0 +1,69 @@
+{
+  "project_info": {
+    "project_number": "556779924156",
+    "firebase_url": "https://proyecto-final-android-8f431.firebaseio.com",
+    "project_id": "proyecto-final-android-8f431",
+    "storage_bucket": "proyecto-final-android-8f431.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:556779924156:android:3f267ba125a9fc32683eb9",
+        "android_client_info": {
+          "package_name": "flavia.figueroa.limapassapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "556779924156-4lagvb5q034pojtt1ksi88v5sci3ugp8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBPGQKJPMutjwJnOqoeAq57PQI6sZMKWZw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "556779924156-4lagvb5q034pojtt1ksi88v5sci3ugp8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:556779924156:android:ae5c62153685d32f683eb9",
+        "android_client_info": {
+          "package_name": "flavia.figueroa.limapassapp.qa"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "556779924156-4lagvb5q034pojtt1ksi88v5sci3ugp8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBPGQKJPMutjwJnOqoeAq57PQI6sZMKWZw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "556779924156-4lagvb5q034pojtt1ksi88v5sci3ugp8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

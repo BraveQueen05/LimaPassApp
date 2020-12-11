@@ -6,10 +6,14 @@ import android.view.animation.*
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Spinner
+import android.widget.Toast
 import androidx.appcompat.widget.AppCompatButton
+import androidx.appcompat.widget.AppCompatEditText
 import androidx.appcompat.widget.AppCompatTextView
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.databinding.DataBindingUtil
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseUser
 import flavia.figueroa.limapassapp.R
 import flavia.figueroa.limapassapp.databinding.ActivityLoginBinding
 import flavia.figueroa.limapassapp.extensions.changeLenguageTo
@@ -34,12 +38,19 @@ class LoginActivity: BaseActivity() {
     private var tvSignUp        : AppCompatTextView ?= null
     private var tvRecoveryPass  : AppCompatTextView ?= null
     private var btnLogin        : AppCompatButton   ?= null
+    private var etEmail         : AppCompatEditText ?= null
+    private var etPassword      : AppCompatEditText ?= null
+
+    private lateinit var auth: FirebaseAuth
 
     override fun getLayout(): Int = R.layout.activity_login
 
     override fun getViewModel(): BaseViewModel? = null
 
     override fun setUpView() {
+        auth = FirebaseAuth.getInstance()
+        auth.currentUser?.let { updateUI() }
+
         val binding: ActivityLoginBinding = DataBindingUtil.setContentView(this, getLayout())
         binding.lifecycleOwner = this
 
@@ -50,11 +61,18 @@ class LoginActivity: BaseActivity() {
         onClickEvents()
     }
 
+    private fun updateUI() {
+        startActivity(Intent(this, HostActivity::class.java))
+        this.finish()
+    }
+
     private fun findViewsByIds(){
         this.ctrLyForm      = findViewById(R.id.ctrLyForm)
         this.tvSignUp       = findViewById(R.id.tvSignUp)
         this.tvRecoveryPass = findViewById(R.id.tvRecoveryPass)
         this.btnLogin       = findViewById(R.id.btnLogin)
+        this.etEmail        = findViewById(R.id.etEmail)
+        this.etPassword     = findViewById(R.id.etPassword)
     }
 
     private fun enterFormAnimation(){
@@ -69,8 +87,16 @@ class LoginActivity: BaseActivity() {
 
     private fun onClickEvents(){
         this.btnLogin?.setOnClickListener {
-            startActivity(Intent(this, HostActivity::class.java))
-            this.finish()
+            if(validation()) {
+                this.auth.signInWithEmailAndPassword(this.etEmail?.text.toString(), this.etPassword?.text.toString()).addOnCompleteListener { task ->
+                    if (task.isSuccessful) {
+                        startActivity(Intent(this, HostActivity::class.java))
+                        this.finish()
+                    } else {
+                        Toast.makeText(this, "${task.exception?.message}", Toast.LENGTH_SHORT).show()
+                    }
+                }
+            }
         }
 
         this.tvSignUp?.setOnClickListener {
@@ -86,5 +112,13 @@ class LoginActivity: BaseActivity() {
         this.btnEs.setOnClickListener {
             changeLenguageTo()
         }
+    }
+
+    private fun validation(): Boolean {
+        if (this.etEmail?.text.toString().isEmpty() || this.etPassword?.text.toString().isEmpty()) {
+            Toast.makeText(this, "Complete todos los campos", Toast.LENGTH_SHORT).show()
+            return false
+        }
+        return true
     }
 }
